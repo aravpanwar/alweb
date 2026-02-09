@@ -45,32 +45,73 @@
             text-decoration: underline;
         }
 
-        ul {
-            list-style-type: square; /* Classic HTML square bullets */
-            padding-left: 20px;
+        /* CAT CONTAINER */
+        .cats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            gap: 40px;
         }
-
-        li {
-            margin-bottom: 6px;
+        
+        .cat-box {
+            font-family: "Courier New", monospace;
+            font-size: 12px;
+            line-height: 1.1;
+            color: #333;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid;
+            border-radius: 10px;
+            white-space: pre;
+            text-align: center;
+            min-width: 250px;
+            box-shadow: 3px 3px 15px rgba(0,0,0,0.08);
         }
-
-        /* LINKS (The Paul Graham Blue) */
-        a {
-            color: #0000EE;
-            text-decoration: none;
+        
+        .cheese-cat {
+            border-color: #ffd700; /* Gold/yellow for cheese */
+            background-color: #fffef0;
         }
-
-        a:hover {
-            background-color: #ffffcc; /* Highlight style */
-            text-decoration: underline;
+        
+        .burger-cat {
+            border-color: #8b4513; /* Brown for burger */
+            background-color: #fff8f0;
         }
-
-        /* DATE STAMPS */
-        .date {
+        
+        .cat-name {
+            font-family: "Verdana", sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
+        .cheese-name {
+            background-color: #fffacd;
+            color: #b8860b;
+        }
+        
+        .burger-name {
+            background-color: #f4a460;
+            color: #8b4513;
+        }
+        
+        .cat-description {
             font-family: "Courier New", monospace;
             font-size: 13px;
+            margin-top: 15px;
             color: #666;
-            margin-right: 8px;
+            font-style: italic;
+        }
+        
+        .heart-container {
+            text-align: center;
+            margin: 25px 0;
+            font-size: 24px;
+            color: #ff6b6b;
         }
         
         /* FOOTER */
@@ -86,16 +127,65 @@
 <body>
 
     <header>
-        <h1>Archita Lala (Soon to be Archi</h1>
-        <div class="subtitle">Ms Mechanical Enginner</div>
+        <h1>Archita Lala (Soon to be Arav's wife, and currently (forever) the love of my life)</h1>
+        <div class="subtitle">Ms Mechanical Engineer</div>
     </header>
 
     <p>
         <strong>cookie</strong>. <br>
         "hiiiiiii architaaaaaaa" - Arav Panwar (Your biggest fan)
+        You better not leave me.
+    </p>
+    
+    <div class="cats-container">
+        <!-- Cheese the Cat -->
+        <div class="cat-box cheese-cat">
+            <div class="cat-name cheese-name">🧀 Cheese 🧀</div>
+            <pre>
+     /\_/\
+    ( o.o ) 
+     > ^ <  
+    /     \
+   / / \ \ \
+  ( (   ) ) )
+   \ \_/ / /
+    \___/ /
+     \___/</pre>
+            <div class="cat-description">The smelly cheesy one who melts hearts</div>
+        </div>
+        
+        <!-- Burger the Cat -->
+        <div class="cat-box burger-cat">
+            <div class="cat-name burger-name">🍔 Burger 🍔</div>
+            <pre>
+     /\_/\
+    ( •.• ) 
+     > - <  
+    /  🍅  \
+   /-------\
+  | 🧀     |
+   \_______/
+    |     |
+    |_____|</pre>
+            <div class="cat-description">The clumsy borgir</div>
+        </div>
+    </div>
+    
+    <div class="heart-container">
+        yum yum meow meow cute cute
+    </div>
+    
+    <p style="text-align: center; font-family: 'Courier New', monospace; color: #666; padding: 20px; border-top: 1px dotted #ffcccb; border-bottom: 1px dotted #ffcccb;">
+        "Muah muah muah muah<br>
+        hiiiiiiiii cutieeeeeee<br>
+        i misssss youuuuuuu<br>
+        i loveeeeee youuuu so much"<br>
+        <br>
+        - Your Arav 💖 (with a sparkle heart)
+    </p>
 
     <footer>
-        Last updated: 2026-02-09
+        Last updated: 2026-03-09 | With endless love from Arav to Archita
     </footer>
 
 </body>
