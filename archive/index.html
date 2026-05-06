@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archita Archive</title>
+    <meta name="description" content="Past entries for Archita, newest first.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' fill='white' stroke='%231f1d1a' stroke-width='6'/%3E%3Crect x='14' y='14' width='36' height='36' fill='none' stroke='%231f1d1a' stroke-width='3'/%3E%3Crect x='24' y='24' width='16' height='16' fill='%231f1d1a'/%3E%3C/svg%3E">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://architalala.com/archive/">
+    <meta property="og:site_name" content="architalala">
+    <meta property="og:title" content="Archita Archive">
+    <meta property="og:description" content="past entries for archita, newest first.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Archita Archive">
+    <meta name="twitter:description" content="past entries for archita, newest first.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #f4efe6;
+            color: #1f1d1a;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            border: 2px solid #1f1d1a;
+            margin: 24px 20px;
+            background-color: #fbf8f1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 0 #1f1d1a, 0 6px 18px rgba(31, 29, 26, 0.08);
+        }
+
+        header {
+            padding: 28px 20px 22px;
+            border-bottom: 1px solid #d6cfc1;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 0;
+        }
+
+        .title-box {
+            border: 1px solid #1f1d1a;
+            padding: 14px 30px;
+            margin: 6px 0 14px;
+            display: inline-block;
+        }
+
+        .kicker {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8a8478;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+            font-style: italic;
+            font-size: 14px;
+            color: #6a655d;
+            margin-top: 8px;
+        }
+
+        .section {
+            padding: 26px 22px;
+        }
+
+        .section-label {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8a8478;
+            text-align: center;
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        .section-label::before,
+        .section-label::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 36px;
+            height: 1px;
+            background-color: #c8c0b0;
+        }
+
+        .section-label::before {
+            right: calc(50% + 60px);
+        }
+
+        .section-label::after {
+            left: calc(50% + 60px);
+        }
+
+        .archive-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .archive-entry {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #1f1d1a;
+            background-color: #fff;
+            padding: 20px 22px;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+            box-shadow: 0 1px 0 #1f1d1a;
+        }
+
+        .archive-entry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 0 #1f1d1a, 0 6px 14px rgba(31, 29, 26, 0.1);
+            background-color: #fefcf6;
+        }
+
+        .archive-meta {
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: #8a8478;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted #c8c0b0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .archive-title {
+            font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+            font-size: 19px;
+            line-height: 1.35;
+            color: #1f1d1a;
+            margin-bottom: 4px;
+        }
+
+        .archive-blurb {
+            font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+            font-style: italic;
+            font-size: 13px;
+            color: #6a655d;
+            margin-top: 6px;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 16px 20px 20px;
+            border-top: 1px solid #d6cfc1;
+            background-color: #f4efe6;
+        }
+
+        .footer-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 10.5px;
+            color: #8a8478;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer-right {
+            text-align: right;
+        }
+
+        .footer-box a {
+            color: #6a655d;
+            text-decoration: none;
+            border-bottom: 1px solid #c8c0b0;
+            padding-bottom: 1px;
+            transition: color 0.15s ease, border-color 0.15s ease;
+        }
+
+        .footer-box a:hover {
+            color: #1f1d1a;
+            border-bottom-color: #1f1d1a;
+        }
+
+        @media (max-width: 620px) {
+            .container {
+                margin: 12px;
+            }
+
+            .archive-meta {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .footer-box {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            .footer-right {
+                text-align: left;
+            }
+
+            .section-label::before,
+            .section-label::after {
+                width: 20px;
+            }
+
+            .section-label::before {
+                right: calc(50% + 50px);
+            }
+
+            .section-label::after {
+                left: calc(50% + 50px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="kicker">Archita Lala</div>
+            <div class="title-box">
+                <h1>The Archive</h1>
+            </div>
+            <div class="subtitle">past entries, newest first</div>
+        </header>
+
+        <div class="section">
+            <div class="section-label">Entries</div>
+
+            <div class="archive-list">
+
+                <a class="archive-entry" href="2026-03-09.html">
+                    <div class="archive-meta">
+                        <span>2026-03-09</span>
+                        <span>ALAP001</span>
+                    </div>
+                    <div class="archive-title">hiiii cutieee, meow meow cute cute</div>
+                    <div class="archive-blurb">the very first one</div>
+                </a>
+
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-box">
+                <div>Archive Index</div>
+                <div class="footer-right"><a href="../">← back to current</a></div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
